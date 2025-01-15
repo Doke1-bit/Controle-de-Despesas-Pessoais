@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Controle de Despesas Pessoais</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Controle de Despesas Pessoais</h1>
+  </header>
+
+  <main>
+    <!-- Saldo Atual -->
+    <section id="balance-section">
+      <h2>Saldo Atual: R$ <span id="balance">0.00</span></h2>
+    </section>
+
+    <!-- Formulário para adicionar transações -->
+    <section id="transaction-section">
+      <h2>Adicionar Transação</h2>
+      <form id="transaction-form">
+        <label for="type">Tipo:</label>
+        <select id="type">
+          <option value="income">Receita</option>
+          <option value="expense">Despesa</option>
+        </select>
+
+        <label for="category">Categoria:</label>
+        <select id="category">
+          <option value="alimentação">Alimentação</option>
+          <option value="transporte">Transporte</option>
+          <option value="lazer">Lazer</option>
+          <option value="outros">Outros</option>
+        </select>
+
+        <label for="amount">Valor (R$):</label>
+        <input type="number" id="amount" step="0.01" required>
+
+        <button type="submit">Adicionar</button>
+      </form>
+    </section>
+
+    <!-- Histórico de transações -->
+    <section id="history-section">
+      <h2>Histórico de Transações</h2>
+      <ul id="transaction-history"></ul>
+    </section>
+
+    <!-- Gráfico de despesas -->
+    <section id="chart-section">
+      <h2>Distribuição de Despesas</h2>
+      <canvas id="expense-chart" width="30" height="30"></canvas>
+
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
